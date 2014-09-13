@@ -1,7 +1,7 @@
-var a = 1;
-function f() {
-    var b = 2;
-    return a + b;
+var global = 1;
+function sum() {
+    var local = 2;
+    return global + local;
 }
 
 var grandFatherName = "John";
@@ -37,14 +37,14 @@ console.log(k());
 console.log(m());
 
 var name;
-function f(x, y) {
+function person(x, y) {
     var age = x;
     name = y;
     return function () {
         console.log(age, name)
     };
 }
-var p = f(10, 'abc');
-var q = f(20, 'def');
+var p = person(10, 'abc');
+var q = person(20, 'def');
 console.log(p());
 console.log(q());

@@ -12,14 +12,14 @@ Before we start talking about the **closures**, it is important that we understa
 
 In **JavaScript**, let's understand the **scope** of variables:
 
-```javascript
-var a = 1;
-function f() {
-    var b = 2;
-    return a + b;
-}
 ```
+var global = 1;
+function sum() {
+    var local = 2;
+    return global + local;
+}
 
+```
 Now, let's try to represent this code in the form of a diagram:
 
 ![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/LexicalScope.png)
@@ -86,6 +86,10 @@ console.log(k());
 console.log(m());
 
 ```
+So if we try to diagrammatically explain the above snippet, it would be something like:
+
+![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/ClosureDetail.jpg)
+
 Does this mean that function 'n' still has access to the outer function 'f'. Yes you are right! Function 'n' takes the snapshot of the outer function, hence it is able to access the value of var b  outside its own lexical scope. Hence we correctly get the result!
 
 So to sum up, closure is nothing but a function defined inside another function. Inner function is closure. It is important to remember that when an outer function returns an inner function, it captures a snapshot of the outer function too.
@@ -96,15 +100,15 @@ See the following piece of code:
 
 ```
 var name;
-function f(x, y) {
+function person(x, y) {
     var age = x;
     name = y;
     return function () {
         console.log(age, name)
     };
 }
-var p = f(10, 'abc');
-var q = f(20, 'def');
+var p = person(10, 'abc');
+var q = person(20, 'def');
 console.log(p());
 console.log(q());
 
