@@ -31,7 +31,7 @@ This means that function sum() can access variable 'global' but variable 'local'
 Let's see through the following table what would be the output in the given cases:
 
 Snippet | Output | Explanation
-------- | ---------------- | ----------:
+------- | ------ | ----------:
 a;  | 1 | 'a' is visible outside
 b;  | undefined  | Outside function f(), b is not accessible
 f();   | 3 | Since a is accessible by function f(), therefore we get the correct result
@@ -113,6 +113,6 @@ console.log(p());
 console.log(q());
 
 ```
-Here 'def' got printed as the result of the second last line instead of where we were expecting 'abc'. This is because closures take the snapshot of the outer function and keep the reference of the global functions. Therefore when a reference variable modifies the value of global variable, the other reference variable pointing out to that global variable get's that modified/updated value.
+Here 'def' got printed as the result of the second last line instead of where we were expecting 'abc'. This is because closures take the snapshot of the outer function and keep the reference of the global functions. Therefore when a reference variable modifies the value of global variable, the other reference variable pointing out to that global variable gets that modified/updated value.
 
 In the upcoming blog "More on closures" we will discuss more examples of closures and their implementations. Till then Happy Learning!
