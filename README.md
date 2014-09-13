@@ -22,7 +22,7 @@ function sum() {
 ```
 Now, let's try to represent this code in the form of a diagram:
 
-![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/LexicalScope.png)
+![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/LexicalScopeUpdated.jpg)
 
 In JavaScript there is function scope. This means that a variable defined inside a function is not visible outside the function. But, the variable defined outside a function or in a code block say if/else or for loop is visible outside the block!
 
