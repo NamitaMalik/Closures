@@ -35,3 +35,16 @@ var m = f(30);
 
 console.log(k());
 console.log(m());
+
+var name;
+function f(x, y) {
+    var age = x;
+    name = y;
+    return function () {
+        console.log(age, name)
+    };
+}
+var p = f(10, 'abc');
+var q = f(20, 'def');
+console.log(p());
+console.log(q());

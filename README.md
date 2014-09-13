@@ -86,5 +86,29 @@ console.log(k());
 console.log(m());
 
 ```
-So if we try to diagrammatically explain the above snippet, it would be something like:
+Does this mean that function 'n' still has access to the outer function 'f'. Yes you are right! Function 'n' takes the snapshot of the outer function, hence it is able to access the value of var b  outside its own lexical scope. Hence we correctly get the result!
 
+So to sum up, closure is nothing but a function defined inside another function. Inner function is closure. It is important to remember that when an outer function returns an inner function, it captures a snapshot of the outer function too.
+
+Now, let's test our understanding a little bit more:
+
+See the following piece of code:
+
+```
+var name;
+function f(x, y) {
+    var age = x;
+    name = y;
+    return function () {
+        console.log(age, name)
+    };
+}
+var p = f(10, 'abc');
+var q = f(20, 'def');
+console.log(p());
+console.log(q());
+
+```
+Here 'def' got printed as the result of the second last line instead of where we were expecting 'abc'. This is because closures take the snapshot of the outer function and keep the reference of the global functions. Therefore when a reference variable modifies the value of global variable, the other reference variable pointing out to that global variable get's that modified/updated value.
+
+In the upcoming blog "More on closures" we will discuss more examples of closures and their implementations. Till then Happy Learning!
