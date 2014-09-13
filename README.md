@@ -88,7 +88,7 @@ console.log(m());
 ```
 So if we try to diagrammatically explain the above snippet, it would be something like:
 
-![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/ClosureDetail.jpg)
+![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/ClosureDetailsUpdated.jpg)
 
 Does this mean that function 'n' still has access to the outer function 'f'. Yes you are right! Function 'n' takes the snapshot of the outer function, hence it is able to access the value of var b  outside its own lexical scope. Hence we correctly get the result!
 
