@@ -31,7 +31,7 @@ This means that function sum() can access variable 'global' but variable 'local'
 Let's see through the following table what would be the output in the given cases:
 
 Snippet | Output | Explanation
-------- | ------ | ----------:
+------- | ------ | -----------:
 a;  | 1 | 'a' is visible outside
 b;  | undefined  | Outside function f(), b is not accessible
 f();   | 3 | Since a is accessible by function f(), therefore we get the correct result
