@@ -26,7 +26,7 @@ Now, let's try to represent this code in the form of a diagram:
 
 In JavaScript there is function scope. This means that a variable defined inside a function is not visible outside the function. But, the variable defined outside a function or in a code block say if/else or for loop is visible outside the block!
 
-This means that function f() can access variable 'a' but variable 'b' cannot be accessed outside the function f().
+This means that function sum() can access variable 'global' but variable 'local' cannot be accessed outside the function sum().
 
 Let's see through the following table what would be the output in the given cases:
 
@@ -38,7 +38,7 @@ f();   | 3 | Since a is accessible by function f(), therefore we get the correct
 
 **2. Scope Chain**
 
-The second most important thing that we need to understand whilw working with concept of closures is 'chaining' or 'scope chain'. Suppose a function is defined inside a function, then, it will have access to variable in its own scope as well as the in the scope of its parents. This is known as scope chain.
+The second most important thing that we need to understand while working with concept of closures is 'chaining' or 'scope chain'. Suppose a function is defined inside a function, then, it will have access to variable in its own scope as well as the in the scope of its parents. This is known as scope chain.
 
 Let's see the following snippet and you would be able to understand:
 
