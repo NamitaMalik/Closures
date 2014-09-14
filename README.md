@@ -1,7 +1,7 @@
 Closures in JavaScript
 ======================
 
-This repository for contains **JavaScript Closure** demo.
+This repository contains **JavaScript Closure** demo.
 
 Before we start talking about the **closures**, it is important that we understand the following terms, because these will form the baseline of our entire understanding on **closures**:
 
@@ -12,10 +12,10 @@ Before we start talking about the **closures**, it is important that we understa
 In **JavaScript**, let's understand the **scope** of variables:
 
 ```javascript
-var global = 1;
+var g = 1;
 function sum() {
-    var local = 2;
-    return global + local;
+    var l = 2;
+    return g + l;
 }
 ```
 
@@ -23,21 +23,21 @@ Now, let's try to represent this code in the form of a diagram:
 
 ![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/LexicalScopeUpdated.jpg)
 
-In **JavaScript** there is **function scope**. This means that a variable defined inside a function is not visible outside the function. But, the variable defined outside a function or in a code block say if/else or for loop is visible outside the block!
+In **JavaScript** there is **function scope**. This means that a variable defined inside a function is not visible outside the function. But, the variable defined in a code block say if/else or for loop then its get visible in whole **function** because that variable is also defined in **function scope**( **Javascript** does not have **block scope**).
 
-This means that function sum() can access variable 'global' but variable 'local' cannot be accessed outside the function sum.
+This means that we can access local variable 'l' inside the function sum only, outside the sum function we can access only global variable 'g'.
 
-Let's see through the following table what would be the output in the given cases:
+Let's see through the following table what would be the output out side the sum function in the given cases:
 
 Snippet | Output     | Explanation
 --------|------------|------------
-global; | 1          | 'global' is visible outside
-local;  | undefined  | Outside function sum(), local is not accessible
-sum();  | 3          | Since global is accessible by function sum(), therefore we get the correct result
+g;      | 1          | 'g' is global variable so we can be access 'g' variable everywhere.
+l;      | undefined  | 'l' is local variable of function sum, so can't be access outside the function sum.
+sum();  | 3          | Since 'g' is accessible into the function sum, therefore we get the correct result
 
 **2. Scope Chain**
 
-The second most important thing that we need to understand while working with concept of closures is **'chaining'** or **'scope chain'**. Suppose a function is defined inside a function, then, it will have access to variable in its own scope as well as the in the scope of its parents. This is known as scope chain.
+The second most important thing that we need to understand while working with concept of **closures** is **'chaining'** or **'scope chain'**. Suppose a **function** is defined inside a **function**, then, it will have access to variable in its own **scope** as well as the in the **scope** of its parents. This is known as **scope chain**.
 
 Let's see the following snippet and you would be able to understand:
 
@@ -45,16 +45,13 @@ Let's see the following snippet and you would be able to understand:
 var grandFatherName = "John";
 function father() {
     var fatherName = "Devis";
-
     function child() {
         var childName = "Tom";
         var description = "My name is" + childName + " ,my grandfather is " + grandfatherName + " and my father is " + fatherName;
         return description;
     }
-
     return child();
 }
-
 console.log(father());
 ```
 
@@ -62,11 +59,11 @@ O/P would be My name is Tom , my grandfather is John and my father is Devis
 
 The example above is self explanatory though, but still I would like to give a brief description:
 
-father() is the outer function that contains variable fatherName(). Child() is a function inside the function father() which has a variable childName and description. In the variable description we are accessing variable fatherName and grandFatherName. grandFatherName is a global variable, hence it would be accessible everywhere while fatherName is a local variable in function father() but it is still accessible to function child() as child() has access not only to the varaibles in its own lexical scope but also in its parents!
+**father** is the outer **function** that contains variable **fatherName**. **child** is a function inside the **function** **father** which has a variable **childName** and **description**. In the variable **description** we are accessing variable **fatherName** and **grandFatherName**. **grandFatherName** is a **global** variable, hence it would be accessible everywhere while **fatherName** is a **local** variable in **function** father but it is still accessible to **function child** as child has access not only to the variables in its own **lexical scope** but also in its parents!
 
 Now, let’s take the things further and put some light on **closures**, have a look at the following code:
 
-```
+```javascript
 var a = 2;
 var f = function (param1) {
     var b = param1;
@@ -77,14 +74,12 @@ var f = function (param1) {
     }
     return n;
 };
-
 var k = f(20);
 var m = f(30);
-
 console.log(k());
 console.log(m());
-
 ```
+
 So if we try to diagrammatically explain the above snippet, it would be something like:
 
 ![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/ClosureDetailsUpdated.jpg)
@@ -97,7 +92,7 @@ Now, let's test our understanding a little bit more:
 
 See the following piece of code:
 
-```
+```javascript
 var name;
 function person(x, y) {
     var age = x;
@@ -110,7 +105,6 @@ var p = person(10, 'abc');
 var q = person(20, 'def');
 console.log(p());
 console.log(q());
-
 ```
 Here 'def' got printed as the result of the second last line instead of where we were expecting 'abc'. This is because closures take the snapshot of the outer function and keep the reference of the global functions. Therefore when a reference variable modifies the value of global variable, the other reference variable pointing out to that global variable gets that modified/updated value.
 
