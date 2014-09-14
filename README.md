@@ -82,9 +82,9 @@ console.log(m());
 
 So if we try to diagrammatically explain the above snippet, it would be something like:
 
-![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/closure.jpg)
+![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/closure.png)
 
-Does this mean that function 'n' still has access to the outer function 'f'. Yes you are right! Function 'n' takes the snapshot of the outer function, hence it is able to access the value of var b  outside its own lexical scope. Hence we correctly get the result!
+Does this mean that inner **function** 'n' still has access to the outer **function** 'f'. Yes you are right! **Function** 'n' takes the snapshot of the outer **function**, hence it is able to access the value of variable b outside its own lexical scope. Hence we correctly get the result!
 
 So to sum up, **closure** is nothing but a function defined inside another function. Inner function is closure. It is important to remember that when an outer function returns an inner function, it captures a snapshot of the outer function too.
 
