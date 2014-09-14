@@ -44,15 +44,19 @@ var m = f(30);
 console.log(k());
 console.log(m());
 
+
+// *************************************************************************
+// ************************** Closure Snapshot *****************************
+// *************************************************************************
 var name;
-function person(x, y) {
-    var age = x;
-    name = y;
+function person(a, n) {
+    var age = a;
+    name = n;
     return function () {
         console.log(age, name)
     };
 }
-var p = person(10, 'abc');
-var q = person(20, 'def');
-console.log(p());
-console.log(q());
+var amit = person(25, 'Amit');
+var namita = person(23, 'Namita');
+console.log(amit());
+console.log(namita());

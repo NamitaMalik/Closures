@@ -84,9 +84,9 @@ So if we try to diagrammatically explain the above snippet, it would be somethin
 
 ![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/closure.png)
 
-Does this mean that inner **function** 'n' still has access to the outer **function** 'f'. Yes you are right! **Function** 'n' takes the snapshot of the outer **function**, hence it is able to access the value of variable b outside its own lexical scope. Hence we correctly get the result!
+Does this mean that inner **function** 'n' still has access to the outer **function** 'f'. Yes you are right! When any **inner function** get out from **outer function** then it takes the snapshot of the outer **function** with it, hence it is able to access the value of variable 'b' outside its own **lexical scope**. Hence we correctly get the result!
 
-So to sum up, **closure** is nothing but a function defined inside another function. Inner function is closure. It is important to remember that when an outer function returns an inner function, it captures a snapshot of the outer function too.
+So to sum up, **closure** is nothing but a **function** defined inside another **function**. Inner **function** is **closure**. It is important to remember that when an **outer function** returns an **inner function** or assign **inner function** to some **global** or non local variable of **outer function**, then it captures a snapshot of the **outer function** with it.
 
 Now, let's test our understanding a little bit more:
 
@@ -94,18 +94,19 @@ See the following piece of code:
 
 ```javascript
 var name;
-function person(x, y) {
-    var age = x;
-    name = y;
+function person(a, n) {
+    var age = a;
+    name = n;
     return function () {
         console.log(age, name)
     };
 }
-var p = person(10, 'abc');
-var q = person(20, 'def');
-console.log(p());
-console.log(q());
+var amit = person(25, 'Amit');
+var namita = person(23, 'Namita');
+console.log(amit());
+console.log(namita());
 ```
-Here 'def' got printed as the result of the second last line instead of where we were expecting 'abc'. This is because closures take the snapshot of the outer function and keep the reference of the global functions. Therefore when a reference variable modifies the value of global variable, the other reference variable pointing out to that global variable gets that modified/updated value.
+
+Here 'namita' got printed as the result of the second last line instead of where we were expecting 'amit'. This is because **closures** take the snapshot of the **outer function** and keep the reference of the global variables because global variables are accessible out side the outer function as well. **Inner function/closure** takes snapshot for those variable only which are not accessible out side the that **function** or which are private variable of **outer function**. Therefore when a reference variable modifies the value of global variable, the other reference variable pointing out to that global variable gets that modified/updated value.
 
 In the upcoming blog "More on closures" we will discuss more examples of closures and their implementations. Till then Happy Learning!
