@@ -21,7 +21,7 @@ function sum() {
 
 Now, let's try to represent this code in the form of a diagram:
 
-![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/LexicalScopeUpdated.jpg)
+![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/lexical.jpg)
 
 In **JavaScript** there is **function scope**. This means that a variable defined inside a function is not visible outside the function. But, the variable defined in a code block say if/else or for loop then its get visible in whole **function** because that variable is also defined in **function scope**( **Javascript** does not have **block scope**).
 
@@ -82,7 +82,7 @@ console.log(m());
 
 So if we try to diagrammatically explain the above snippet, it would be something like:
 
-![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/ClosureDetailsUpdated.jpg)
+![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/closure.jpg)
 
 Does this mean that function 'n' still has access to the outer function 'f'. Yes you are right! Function 'n' takes the snapshot of the outer function, hence it is able to access the value of var b  outside its own lexical scope. Hence we correctly get the result!
 
