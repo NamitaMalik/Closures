@@ -1,10 +1,9 @@
 Closures in JavaScript
 ======================
 
-This repository contains **JavaScript Closure** demo.
+This repository for contains **JavaScript Closure** demo.
 
 Before we start talking about the **closures**, it is important that we understand the following terms, because these will form the baseline of our entire understanding on **closures**:
-
 
 **1. Lexical Scope**
 
@@ -12,29 +11,29 @@ Before we start talking about the **closures**, it is important that we understa
 
 In **JavaScript**, let's understand the **scope** of variables:
 
-```
+```javascript
 var global = 1;
 function sum() {
     var local = 2;
     return global + local;
 }
-
 ```
+
 Now, let's try to represent this code in the form of a diagram:
 
 ![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/LexicalScopeUpdated.jpg)
 
-In JavaScript there is **function scope**. This means that a variable defined inside a function is not visible outside the function. But, the variable defined outside a function or in a code block say if/else or for loop is visible outside the block!
+In **JavaScript** there is **function scope**. This means that a variable defined inside a function is not visible outside the function. But, the variable defined outside a function or in a code block say if/else or for loop is visible outside the block!
 
-This means that function sum() can access variable 'global' but variable 'local' cannot be accessed outside the function sum().
+This means that function sum() can access variable 'global' but variable 'local' cannot be accessed outside the function sum.
 
 Let's see through the following table what would be the output in the given cases:
 
-Snippet | Output | Explanation
-------- | ------ | -----------:
-a;  | 1 | 'a' is visible outside
-b;  | undefined  | Outside function f(), b is not accessible
-f();   | 3 | Since a is accessible by function f(), therefore we get the correct result
+Snippet | Output     | Explanation
+--------|------------|------------
+global; | 1          | 'global' is visible outside
+local;  | undefined  | Outside function sum(), local is not accessible
+sum();  | 3          | Since global is accessible by function sum(), therefore we get the correct result
 
 **2. Scope Chain**
 
@@ -42,7 +41,7 @@ The second most important thing that we need to understand while working with co
 
 Let's see the following snippet and you would be able to understand:
 
-```
+```javascript
 var grandFatherName = "John";
 function father() {
     var fatherName = "Devis";
@@ -57,8 +56,8 @@ function father() {
 }
 
 console.log(father());
-
 ```
+
 O/P would be My name is Tom , my grandfather is John and my father is Devis
 
 The example above is self explanatory though, but still I would like to give a brief description:

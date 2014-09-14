@@ -26,7 +26,7 @@ var f = function (param1) {
         var c = 10;
         var d = a + b + c;
         return d;
-    }
+    };
     return n;
 };
 
