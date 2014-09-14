@@ -41,7 +41,7 @@ The second most important thing that we need to understand while working with co
 
 Let's see the following snippet and you would be able to understand:
 
-```
+```javascript
 var grandFatherName = "John";
 function father() {
     var fatherName = "Devis";
@@ -56,8 +56,8 @@ function father() {
 }
 
 console.log(father());
-
 ```
+
 O/P would be My name is Tom , my grandfather is John and my father is Devis
 
 The example above is self explanatory though, but still I would like to give a brief description:
