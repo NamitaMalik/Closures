@@ -58,5 +58,5 @@ function person(a, n) {
 }
 var amit = person(25, 'Amit');
 var namita = person(23, 'Namita');
-console.log(amit());
-console.log(namita());
+console.log(amit()); // 25 Namita
+console.log(namita()); // 23 Namita
