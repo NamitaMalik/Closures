@@ -1,10 +1,10 @@
 // *************************************************************************
 // **************************** Lexical Scope ******************************
 // *************************************************************************
-var global = 1;
+var g = 1;
 function sum() {
-    var local = 2;
-    return global + local;
+    var l = 2;
+    return g + l;
 }
 
 
@@ -49,9 +49,9 @@ console.log(m());
 // ************************** Closure Snapshot *****************************
 // *************************************************************************
 var name;
-function person(a, n) {
-    var age = a;
-    name = n;
+function person(x, y) {
+    var age = x;
+    name = y;
     return function () {
         console.log(age, name)
     };
