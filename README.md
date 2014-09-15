@@ -21,7 +21,7 @@ function sum() {
 
 Now, let's try to represent this code in the form of a diagram:
 
-![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/lexical.jpg)
+![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/lexical.png)
 
 In **JavaScript** there is **function scope**. This means that a variable defined inside a function is not visible outside the function. But, the variable defined in a code block say if/else or for loop then its get visible in whole **function** because that variable is also defined in **function scope**( **Javascript** does not have **block scope**).
 
