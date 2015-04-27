@@ -21,7 +21,7 @@ function sum() {
 
 Now, let's try to represent this code in the form of a diagram:
 
-![output.png](https://raw.githubusercontent.com/namita1990/Closures/master/lexical.png)
+![output.png](https://raw.githubusercontent.com/NamitaMalik/Closures/master/lexical.png)
 
 In **JavaScript** there is **function scope**. This means that a variable defined inside a function is not visible outside the function. But, the variable defined in a code block say if/else or for loop then its get visible in whole **function** because that variable is also defined in **function scope**( **Javascript** does not have **block scope**).
 
@@ -82,7 +82,7 @@ console.log(m());
 
 So if we try to diagrammatically explain the above snippet, it would be something like:
 
-![output.jpg](https://raw.githubusercontent.com/namita1990/Closures/master/closure.png)
+![output.jpg](https://raw.githubusercontent.com/NamitaMalik/Closures/master/closure.png)
 
 Does this mean that inner **function** 'n' still has access to the outer **function** 'f'. Yes you are right! When any **inner function** get out from **outer function** then it takes the snapshot of the outer **function** with it, hence it is able to access the value of variable 'b' outside its own **lexical scope**. Hence we correctly get the result!
 
@@ -109,6 +109,6 @@ console.log(namita()); // 23 Namita
 
 Here 'Namita' got printed as the result of the second last line instead of where we were expecting 'Amit'. This is because **closures** take the snapshot of the **outer function** and keep the reference of the global variables because global variables are accessible out side the outer function as well. **Inner function/closure** takes snapshot for those variable only which are not accessible out side the that **function** or which are private variable of **outer function**. Therefore when a reference variable modifies the value of global variable, the other reference variable pointing out to that global variable gets that modified/updated value.
 
-**Note**: You can checkout full working source code from this [link](https://github.com/namita1990/Closures).
+**Note**: You can checkout full working source code from this [link](https://github.com/NamitaMalik/Closures).
 
 In the upcoming blog "More on closures" we will discuss more examples of closures and their implementations. Till then Happy Learning!
